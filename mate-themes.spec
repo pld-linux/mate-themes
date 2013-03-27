@@ -1,22 +1,22 @@
 Summary:	MATE Desktop themes
 Name:		mate-themes
-Version:	1.5.0
-Release:	0.4
+Version:	1.5.1
+Release:	0.5
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	dd187acc5ccefc60b7b0309ee14a4912
+# Source0-md5:	e3482adda172cfab1547f6811d029173
 URL:		http://mate-desktop.org/
+BuildRequires:	gtk2-engines
 BuildRequires:	icon-naming-utils
 BuildRequires:	mate-common
 BuildRequires:	mate-doc-utils
 BuildRequires:	mate-icon-theme-devel
-BuildRequires:	pkgconfig(gtk-engines-2)
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	gtk2-engines
 Requires:	gtk2-theme-engine-murrine
-Requires:	mate-icon-theme >= %{version}
+Requires:	mate-icon-theme >= 1.5
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +27,7 @@ MATE Desktop themes.
 Summary:	Accessibility themes for MATE environment
 Group:		Themes
 Requires:	%{name} = %{version}-%{release}
-Requires:	mate-icon-theme >= %{version}
+Requires:	mate-icon-theme >= 1.5
 
 %description accessibility
 Accessibility themes for MATE environment.
@@ -38,11 +38,11 @@ Accessibility themes for MATE environment.
 %build
 NOCONFIGURE=1 ./autogen.sh
 %configure \
+	--disable-silent-rules \
 	--enable-all-themes \
 	--enable-icon-mapping \
 
-%{__make} \
-	V=1
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -94,12 +94,16 @@ exit 0
 %{_datadir}/themes/AlaDelta
 %{_datadir}/themes/Aldabra
 %{_datadir}/themes/Atantla
+%{_datadir}/themes/BlackMATE
 %{_datadir}/themes/Fog
+%{_datadir}/themes/GreenLaguna
+%{_datadir}/themes/Menta
+%{_datadir}/themes/Menta-Black
 %{_datadir}/themes/Quid
 %{_datadir}/themes/Shiny
 %{_datadir}/themes/Simply
+%{_datadir}/themes/TraditionalGreen
 %{_datadir}/themes/TraditionalOk
-%{_datadir}/themes/TraditionalOkClassic
 %{_iconsdir}/Fog
 %{_iconsdir}/Quid
 %{_iconsdir}/mate/cursors
