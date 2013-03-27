@@ -1,14 +1,14 @@
 Summary:	MATE Desktop themes
 Name:		mate-themes
-Version:	1.5.1
+Version:	1.5.2
 Release:	0.5
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	e3482adda172cfab1547f6811d029173
+# Source0-md5:	81402f9bfaf482224502d8965b79da52
 URL:		http://mate-desktop.org/
 BuildRequires:	gtk2-engines
-BuildRequires:	icon-naming-utils
+BuildRequires:	icon-naming-utils >= 0.8.7
 BuildRequires:	mate-common
 BuildRequires:	mate-doc-utils
 BuildRequires:	mate-icon-theme-devel
@@ -39,7 +39,6 @@ Accessibility themes for MATE environment.
 NOCONFIGURE=1 ./autogen.sh
 %configure \
 	--disable-silent-rules \
-	--enable-all-themes \
 	--enable-icon-mapping \
 
 %{__make}
