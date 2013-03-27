@@ -11,6 +11,8 @@ Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
 # Source0-md5:	81402f9bfaf482224502d8965b79da52
 URL:		http://mate-desktop.org/
+BuildRequires:	gdk-pixbuf2-devel
+BuildRequires:	gtk+2-devel
 BuildRequires:	gtk2-engines
 BuildRequires:	icon-naming-utils >= 0.8.7
 BuildRequires:	mate-common
