@@ -1,7 +1,7 @@
 Summary:	MATE Desktop themes
 Name:		mate-themes
 Version:	1.5.2
-Release:	0.5
+Release:	0.6
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
@@ -21,7 +21,21 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-MATE Desktop themes.
+MATE Desktop themes:
+
+- AlaDelta: gtk2, metacity
+- Aldabra: gtk2, gtk3, metacity
+- Atlanta: metacity
+- BlackMATE: cinnamon, gnome-shell, gtk2, gtk3, metacity
+- Fog: metacity
+- GreenLaguna: gtk2, gtk3, metacity
+- Menta: cinnamon, gnome-shell, gtk2, gtk3, metacity, unity, xfwm4
+- Menta-Black: metacity
+- Quid: ? (x-gnome-metatheme)
+- Shiny: gtk2, metacity
+- Simply: gtk2
+- TraditionalGreen: gtk2, gtk3, metacity
+- TraditionalOk: gtk2, gtk3, metacity, openbox, xfwm4
 
 %package accessibility
 Summary:	Accessibility themes for MATE environment
@@ -30,7 +44,16 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	mate-icon-theme >= 1.5
 
 %description accessibility
-Accessibility themes for MATE environment.
+Accessibility themes for MATE environment:
+
+- ContrastHigh: gtk2, gtk3, metacity
+- ContrastHighInverse: gtk2
+- ContrastHighLargePrint: gtk2
+- ContrastHighLargePrintInverse: gtk2
+- ContrastLow: gtk2
+- ContrastLowLargePrint: gtk2
+- PrintLarge: gtk2
+- Reverse: gtk2, metacity
 
 %prep
 %setup -q
@@ -115,6 +138,7 @@ exit 0
 %{_datadir}/themes/ContrastHighLargePrintInverse
 %{_datadir}/themes/ContrastLow
 %{_datadir}/themes/ContrastLowLargePrint
+%{_datadir}/themes/PrintLarge
 %{_datadir}/themes/Reverse
 %{_iconsdir}/ContrastHigh
 %{_iconsdir}/ContrastHigh-SVG
@@ -122,4 +146,3 @@ exit 0
 %{_iconsdir}/ContrastHighLargePrint
 %{_iconsdir}/ContrastHighLargePrintInverse
 %{_iconsdir}/MateLargePrint
-%{_datadir}/themes/PrintLarge
