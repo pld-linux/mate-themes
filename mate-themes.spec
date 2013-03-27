@@ -1,7 +1,11 @@
+#
+# Conditional build:
+%bcond_without	a11y	# disable accessibility themes
+
 Summary:	MATE Desktop themes
 Name:		mate-themes
 Version:	1.5.2
-Release:	0.6
+Release:	0.7
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
@@ -62,6 +66,7 @@ Accessibility themes for MATE environment:
 NOCONFIGURE=1 ./autogen.sh
 %configure \
 	--disable-silent-rules \
+	%{__enable_disable a11y all-themes} \
 	--enable-icon-mapping \
 
 %{__make}
