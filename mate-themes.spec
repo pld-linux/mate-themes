@@ -17,7 +17,6 @@ BuildRequires:	gtk2-engines
 BuildRequires:	icon-naming-utils >= 0.8.7
 BuildRequires:	mate-common
 BuildRequires:	mate-doc-utils
-BuildRequires:	mate-icon-theme-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	gtk2-engines
