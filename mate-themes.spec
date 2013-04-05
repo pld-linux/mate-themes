@@ -4,12 +4,12 @@
 
 Summary:	MATE Desktop themes
 Name:		mate-themes
-Version:	1.5.2
+Version:	1.6.0
 Release:	0.7
 License:	GPL v2+
 Group:		Themes
-Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	81402f9bfaf482224502d8965b79da52
+Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
+# Source0-md5:	28b846fd1195bbe85b5b521a099a2489
 URL:		http://mate-desktop.org/
 BuildRequires:	gdk-pixbuf2-devel
 BuildRequires:	gtk+2-devel
@@ -62,6 +62,8 @@ Accessibility themes for MATE environment:
 
 %prep
 %setup -q
+
+grep -r CursorTheme=MATE . -l | xargs sed -i -e 's,CursorTheme=MATE,CursorTheme=mate,'
 
 %build
 NOCONFIGURE=1 ./autogen.sh
