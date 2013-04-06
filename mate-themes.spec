@@ -102,7 +102,7 @@ fi
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING README
+%doc AUTHORS README
 %{_datadir}/themes/AlaDelta
 %{_datadir}/themes/Aldabra
 %{_datadir}/themes/Atantla
