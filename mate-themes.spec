@@ -5,7 +5,7 @@
 Summary:	MATE Desktop themes
 Name:		mate-themes
 Version:	1.6.0
-Release:	0.11
+Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
@@ -21,7 +21,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	gtk-update-icon-cache
 Requires:	gtk2-engines
-Requires:	gtk2-theme-engine-murrine
+Requires:	gtk2-theme-engine-murrine >= 0.98
 Requires:	mate-icon-theme >= 1.5
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
