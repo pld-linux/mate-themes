@@ -5,7 +5,7 @@
 Summary:	MATE Desktop themes
 Name:		mate-themes
 Version:	1.6.0
-Release:	0.7
+Release:	0.11
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
@@ -19,6 +19,7 @@ BuildRequires:	mate-common
 BuildRequires:	mate-doc-utils
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Requires:	gtk-update-icon-cache
 Requires:	gtk2-engines
 Requires:	gtk2-theme-engine-murrine
 Requires:	mate-icon-theme >= 1.5
@@ -90,33 +91,14 @@ done
 rm -rf $RPM_BUILD_ROOT
 
 %post
-for icon_theme in \
-  Fog PrintLarge Quid Reverse Shiny Simply TraditionalOk \
-  ContrastHighLargePrint ContrastHighLargePrintInverse \
-  ContrastLow ContrastHigh ContrastHighInverse Aldabra ;
-do
-	/bin/touch --no-create %{_datadir}/icons/${icon_theme}
-done
+%update_icon_cache Fog
+%update_icon_cache Quid
 
 %postun
 if [ $1 -eq 0 ]; then
-	for icon_theme in \
-	Fog PrintLarge Quid Reverse Shiny Simply TraditionalOk \
-	ContrastHighLargePrint ContrastHighLargePrintInverse \
-	ContrastLow ContrastHigh ContrastHighInverse Aldabra; do
-		/bin/touch --no-create %{_datadir}/icons/${icon_theme}
-		%{_bindir}/gtk-update-icon-cache %{_datadir}/icons/${icon_theme}
-	done
+	%update_icon_cache Fog
+	%update_icon_cache Quid
 fi
-
-%posttrans
-for icon_theme in \
-	Fog PrintLarge Quid Reverse Shiny Simply TraditionalOk \
-	ContrastHighLargePrint ContrastHighLargePrintInverse \
-	ContrastLow ContrastHigh ContrastHighInverse Aldabra; do
-	%{_bindir}/gtk-update-icon-cache %{_datadir}/icons/${icon_theme}
-done
-exit 0
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
