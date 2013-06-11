@@ -4,12 +4,12 @@
 
 Summary:	MATE Desktop themes
 Name:		mate-themes
-Version:	1.6.0
+Version:	1.6.1
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	28b846fd1195bbe85b5b521a099a2489
+# Source0-md5:	b7e818ca2825ff2012c8b681ad6890b6
 URL:		http://mate-desktop.org/
 BuildRequires:	gdk-pixbuf2-devel
 BuildRequires:	gtk+2-devel
@@ -30,7 +30,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 MATE Desktop themes:
 
 - AlaDelta: gtk2, metacity
-- Aldabra: gtk2, gtk3, metacity
 - Atlanta: metacity
 - BlackMATE: cinnamon, gnome-shell, gtk2, gtk3, metacity
 - Fog: metacity
@@ -64,10 +63,7 @@ Accessibility themes for MATE environment:
 %prep
 %setup -q
 
-grep -r CursorTheme=MATE . -l | xargs sed -i -e 's,CursorTheme=MATE,CursorTheme=mate,'
-
 %build
-NOCONFIGURE=1 ./autogen.sh
 %configure \
 	--disable-silent-rules \
 	%{__enable_disable a11y all-themes} \
@@ -104,7 +100,6 @@ fi
 %defattr(644,root,root,755)
 %doc AUTHORS README
 %{_datadir}/themes/AlaDelta
-%{_datadir}/themes/Aldabra
 %{_datadir}/themes/Atantla
 %{_datadir}/themes/BlackMATE
 %{_datadir}/themes/Fog
