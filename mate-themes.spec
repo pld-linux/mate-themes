@@ -4,12 +4,12 @@
 
 Summary:	MATE Desktop themes
 Name:		mate-themes
-Version:	1.6.1
+Version:	1.6.2
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	b7e818ca2825ff2012c8b681ad6890b6
+# Source0-md5:	845c0ca1834d2dab776dfd09054f9efc
 URL:		http://mate-desktop.org/
 BuildRequires:	gdk-pixbuf2-devel
 BuildRequires:	gtk+2-devel
