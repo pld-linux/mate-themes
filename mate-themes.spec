@@ -1,22 +1,24 @@
 #
 # Conditional build:
-%bcond_without	a11y	# disable accessibility themes
+%bcond_without	a11y	# all accessibility themes (only core a11y themes otherwise)
 
 Summary:	MATE Desktop themes
+Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	1.6.2
+Version:	1.6.3
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	845c0ca1834d2dab776dfd09054f9efc
+# Source0-md5:	6bf73ac10b97f5d2f3ad48cdcb059095
+Patch0:		%{name}-sh.patch
 URL:		http://mate-desktop.org/
-BuildRequires:	gdk-pixbuf2-devel
-BuildRequires:	gtk+2-devel
-BuildRequires:	gtk2-engines
+BuildRequires:	gdk-pixbuf2-devel >= 2.0.0
+BuildRequires:	gettext-devel
+BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	icon-naming-utils >= 0.8.7
-BuildRequires:	mate-common
-BuildRequires:	mate-doc-utils
+BuildRequires:	intltool >= 0.35.0
+BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	gtk-update-icon-cache
@@ -29,21 +31,40 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 MATE Desktop themes:
 
-- AlaDelta: gtk2, metacity
-- Atlanta: metacity
-- BlackMATE: cinnamon, gnome-shell, gtk2, gtk3, metacity
-- Fog: metacity
-- GreenLaguna: gtk2, gtk3, metacity
-- Menta: cinnamon, gnome-shell, gtk2, gtk3, metacity, unity, xfwm4
-- Menta-Black: metacity
+- AlaDelta: gtk2, marco
+- Atlanta: marco
+- BlackMATE: cinnamon, gnome-shell, gtk2, gtk3, marco
+- BlueMenta: connamon, gtk2, gtk3, marco, unity, xfwm4
+- Fog: marco
+- GreenLaguna: gtk2, gtk3, marco
+- Menta: cinnamon, gnome-shell, gtk2, gtk3, marco, unity, xfwm4
+- Menta-Black: marco
 - Quid: ? (x-gnome-metatheme)
-- Shiny: gtk2, metacity
+- Shiny: gtk2, marco
 - Simply: gtk2
-- TraditionalGreen: gtk2, gtk3, metacity
-- TraditionalOk: gtk2, gtk3, metacity, openbox, xfwm4
+- TraditionalGreen: gtk2, gtk3, marco
+- TraditionalOk: gtk2, gtk3, marco, openbox, xfwm4
+
+%description -l pl.UTF-8
+Motywy dla środowiska MATE Desktop:
+
+- AlaDelta: gtk2, marco
+- Atlanta: marco
+- BlackMATE: cinnamon, gtk2, gtk3, marco
+- BlueMenta: connamon, gtk2, gtk3, marco, unity, xfwm4
+- Fog: marco
+- GreenLaguna: gtk2, gtk3, marco
+- Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
+- Menta-Black: marco
+- Quid: ? (x-gnome-metatheme)
+- Shiny: gtk2, marco
+- Simply: gtk2
+- TraditionalGreen: gtk2, gtk3, marco
+- TraditionalOk: gtk2, gtk3, marco, openbox, xfwm4
 
 %package accessibility
 Summary:	Accessibility themes for MATE environment
+Summary(pl.UTF-8):	Motywy uprzystępniające dla środowiska MATE
 Group:		Themes
 Requires:	%{name} = %{version}-%{release}
 Requires:	mate-icon-theme >= 1.5
@@ -51,23 +72,37 @@ Requires:	mate-icon-theme >= 1.5
 %description accessibility
 Accessibility themes for MATE environment:
 
-- ContrastHigh: gtk2, gtk3, metacity
+- ContrastHigh: gtk2, gtk3, marco
 - ContrastHighInverse: gtk2
 - ContrastHighLargePrint: gtk2
 - ContrastHighLargePrintInverse: gtk2
 - ContrastLow: gtk2
 - ContrastLowLargePrint: gtk2
 - PrintLarge: gtk2
-- Reverse: gtk2, metacity
+- Reverse: gtk2, marco
+
+%description accessibility -l pl.UTF-8
+Motywy dla środowiska MATE o zwiększonej dostępności dla
+niepełnosprawnych:
+
+- ContrastHigh: gtk2, gtk3, marco
+- ContrastHighInverse: gtk2
+- ContrastHighLargePrint: gtk2
+- ContrastHighLargePrintInverse: gtk2
+- ContrastLow: gtk2
+- ContrastLowLargePrint: gtk2
+- PrintLarge: gtk2
+- Reverse: gtk2, marco
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
-	--disable-silent-rules \
 	%{__enable_disable a11y all-themes} \
 	--enable-icon-mapping \
+	--disable-silent-rules
 
 %{__make}
 
@@ -98,10 +133,11 @@ fi
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README
+%doc AUTHORS ChangeLog README
 %{_datadir}/themes/AlaDelta
 %{_datadir}/themes/Atantla
 %{_datadir}/themes/BlackMATE
+%{_datadir}/themes/BlueMenta
 %{_datadir}/themes/Fog
 %{_datadir}/themes/GreenLaguna
 %{_datadir}/themes/Menta

@@ -1,0 +1,11 @@
+--- mate-themes-1.6.3/common/mkiconlinks.sh.orig	2013-12-31 21:59:11.000000000 +0100
++++ mate-themes-1.6.3/common/mkiconlinks.sh	2014-01-05 17:22:47.811152927 +0100
+@@ -16,7 +16,7 @@
+ while [ ! -z "$NEXTLINE" ] ; do
+ 
+ 	# Skip lines beginning with '#'
+-	if [ ! "${NEXTLINE:0:1}" == '#' ]; then
++	if ! echo "$NEXTLINE" | grep -q '^#'; then
+ 		#Extract first field, minus its trailing colon
+ 		ORIG_FILE=`echo $NEXTLINE | awk '/:/{print $1}' | sed -e 's/://'`
+ 
