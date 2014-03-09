@@ -5,14 +5,16 @@
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	1.6.3
+Version:	1.8.0
 Release:	1
 License:	GPL v2+
 Group:		Themes
-Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	6bf73ac10b97f5d2f3ad48cdcb059095
+Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
+# Source0-md5:	a29efead861d6eb68fda59e95705c520
 Patch0:		%{name}-sh.patch
 URL:		http://mate-desktop.org/
+BuildRequires:	autoconf >= 2.53
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	gdk-pixbuf2-devel >= 2.0.0
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2.0.0
@@ -38,7 +40,7 @@ MATE Desktop themes:
 - Fog: marco
 - GreenLaguna: gtk2, gtk3, marco
 - Menta: cinnamon, gnome-shell, gtk2, gtk3, marco, unity, xfwm4
-- Menta-Black: marco
+- BlackMenta: marco
 - Quid: ? (x-gnome-metatheme)
 - Shiny: gtk2, marco
 - Simply: gtk2
@@ -55,7 +57,7 @@ Motywy dla środowiska MATE Desktop:
 - Fog: marco
 - GreenLaguna: gtk2, gtk3, marco
 - Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
-- Menta-Black: marco
+- BlackMenta: marco
 - Quid: ? (x-gnome-metatheme)
 - Shiny: gtk2, marco
 - Simply: gtk2
@@ -99,6 +101,9 @@ niepełnosprawnych:
 %patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure \
 	%{__enable_disable a11y all-themes} \
 	--enable-icon-mapping \
@@ -111,6 +116,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
 
 for dir in $RPM_BUILD_ROOT%{_iconsdir}/*/; do
 	gtk-update-icon-cache -ft $dir
@@ -137,11 +144,11 @@ fi
 %{_datadir}/themes/AlaDelta
 %{_datadir}/themes/Atantla
 %{_datadir}/themes/BlackMATE
+%{_datadir}/themes/BlackMenta
 %{_datadir}/themes/BlueMenta
 %{_datadir}/themes/Fog
 %{_datadir}/themes/GreenLaguna
 %{_datadir}/themes/Menta
-%{_datadir}/themes/Menta-Black
 %{_datadir}/themes/Quid
 %{_datadir}/themes/Shiny
 %{_datadir}/themes/Simply
