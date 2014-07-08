@@ -117,8 +117,6 @@ rm -rf $RPM_BUILD_ROOT
 	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
-
 for dir in $RPM_BUILD_ROOT%{_iconsdir}/*/; do
 	gtk-update-icon-cache -ft $dir
 done
