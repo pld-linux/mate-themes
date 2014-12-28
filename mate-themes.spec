@@ -16,7 +16,7 @@ URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gdk-pixbuf2-devel >= 2.0.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	icon-naming-utils >= 0.8.7
 BuildRequires:	intltool >= 0.35.0
