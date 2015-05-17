@@ -2,15 +2,17 @@
 # Conditional build:
 %bcond_without	a11y	# all accessibility themes (only core a11y themes otherwise)
 
+%define	gtk3_mver	3.16
+
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	1.8.1
+Version:	1.10.0
 Release:	1
 License:	GPL v2+
 Group:		Themes
-Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
-# Source0-md5:	5c348c11eb78c0ee0442ee429132d2c7
+Source0:	http://pub.mate-desktop.org/releases/1.10/%{name}-gtk%{gtk3_mver}-%{version}.tar.xz
+# Source0-md5:	fa4badf490507d2eb8dcd9e4331ad32c
 Patch0:		%{name}-sh.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
@@ -33,36 +35,28 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 MATE Desktop themes:
 
-- AlaDelta: gtk2, marco
-- Atlanta: marco
-- BlackMATE: cinnamon, gnome-shell, gtk2, gtk3, marco
-- BlueMenta: connamon, gtk2, gtk3, marco, unity, xfwm4
-- Fog: marco
-- GreenLaguna: gtk2, gtk3, marco
-- Menta: cinnamon, gnome-shell, gtk2, gtk3, marco, unity, xfwm4
+- BlackMATE: cinnamon, gtk2, gtk3, marco, unity
 - BlackMenta: marco
-- Quid: ? (x-gnome-metatheme)
-- Shiny: gtk2, marco
-- Simply: gtk2
+- BlueMenta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
+- GreenLaguna: gtk2, gtk3, marco, unity
+- Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
+- Shiny: marco
 - TraditionalGreen: gtk2, gtk3, marco
 - TraditionalOk: gtk2, gtk3, marco, openbox, xfwm4
+- TraditionalOkTest: gtk2, gtk3, marco
 
 %description -l pl.UTF-8
 Motywy dla środowiska MATE Desktop:
 
-- AlaDelta: gtk2, marco
-- Atlanta: marco
-- BlackMATE: cinnamon, gtk2, gtk3, marco
-- BlueMenta: connamon, gtk2, gtk3, marco, unity, xfwm4
-- Fog: marco
-- GreenLaguna: gtk2, gtk3, marco
-- Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
+- BlackMATE: cinnamon, gtk2, gtk3, marco, unity
 - BlackMenta: marco
-- Quid: ? (x-gnome-metatheme)
-- Shiny: gtk2, marco
-- Simply: gtk2
+- BlueMenta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
+- GreenLaguna: gtk2, gtk3, marco, unity
+- Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
+- Shiny: marco
 - TraditionalGreen: gtk2, gtk3, marco
 - TraditionalOk: gtk2, gtk3, marco, openbox, xfwm4
+- TraditionalOkTest: gtk2, gtk3, marco
 
 %package accessibility
 Summary:	Accessibility themes for MATE environment
@@ -75,29 +69,17 @@ Requires:	mate-icon-theme >= 1.5
 Accessibility themes for MATE environment:
 
 - ContrastHigh: gtk2, gtk3, marco
-- ContrastHighInverse: gtk2
-- ContrastHighLargePrint: gtk2
-- ContrastHighLargePrintInverse: gtk2
-- ContrastLow: gtk2
-- ContrastLowLargePrint: gtk2
-- PrintLarge: gtk2
-- Reverse: gtk2, marco
+- ContrastHighInverse: gtk2, gtk3, marco
 
 %description accessibility -l pl.UTF-8
 Motywy dla środowiska MATE o zwiększonej dostępności dla
 niepełnosprawnych:
 
 - ContrastHigh: gtk2, gtk3, marco
-- ContrastHighInverse: gtk2
-- ContrastHighLargePrint: gtk2
-- ContrastHighLargePrintInverse: gtk2
-- ContrastLow: gtk2
-- ContrastLowLargePrint: gtk2
-- PrintLarge: gtk2
-- Reverse: gtk2, marco
+- ContrastHighInverse: gtk2, gtk3, marco
 
 %prep
-%setup -q
+%setup -q -n %{name}-gtk%{gtk3_mver}-%{version}
 %patch0 -p1
 
 %build
@@ -126,49 +108,22 @@ done
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-%update_icon_cache Fog
-%update_icon_cache Quid
-
-%postun
-if [ $1 -eq 0 ]; then
-	%update_icon_cache Fog
-	%update_icon_cache Quid
-fi
-
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
-%{_datadir}/themes/AlaDelta
-%{_datadir}/themes/Atantla
 %{_datadir}/themes/BlackMATE
 %{_datadir}/themes/BlackMenta
 %{_datadir}/themes/BlueMenta
-%{_datadir}/themes/Fog
 %{_datadir}/themes/GreenLaguna
 %{_datadir}/themes/Menta
-%{_datadir}/themes/Quid
 %{_datadir}/themes/Shiny
-%{_datadir}/themes/Simply
 %{_datadir}/themes/TraditionalGreen
 %{_datadir}/themes/TraditionalOk
-%{_iconsdir}/Fog
-%{_iconsdir}/Quid
+%{_datadir}/themes/TraditionalOkTest
 %{_iconsdir}/mate/cursors
 
 %files accessibility
 %defattr(644,root,root,755)
 %{_datadir}/themes/ContrastHigh
 %{_datadir}/themes/ContrastHighInverse
-%{_datadir}/themes/ContrastHighLargePrint
-%{_datadir}/themes/ContrastHighLargePrintInverse
-%{_datadir}/themes/ContrastLow
-%{_datadir}/themes/ContrastLowLargePrint
-%{_datadir}/themes/PrintLarge
-%{_datadir}/themes/Reverse
 %{_iconsdir}/ContrastHigh
-%{_iconsdir}/ContrastHigh-SVG
-%{_iconsdir}/ContrastHighInverse
-%{_iconsdir}/ContrastHighLargePrint
-%{_iconsdir}/ContrastHighLargePrintInverse
-%{_iconsdir}/MateLargePrint
