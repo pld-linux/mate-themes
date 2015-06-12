@@ -3,16 +3,15 @@
 %bcond_without	a11y	# all accessibility themes (only core a11y themes otherwise)
 
 %define	gtk3_mver	3.16
-
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	1.10.0
+Version:	1.10.1
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.10/%{name}-gtk%{gtk3_mver}-%{version}.tar.xz
-# Source0-md5:	fa4badf490507d2eb8dcd9e4331ad32c
+# Source0-md5:	93f5a0af8f90c242eeabdc8586342ed2
 Patch0:		%{name}-sh.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
