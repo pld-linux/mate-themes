@@ -6,12 +6,12 @@
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	1.10.1
+Version:	1.10.2
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.10/%{name}-gtk%{gtk3_mver}-%{version}.tar.xz
-# Source0-md5:	93f5a0af8f90c242eeabdc8586342ed2
+# Source0-md5:	953200f0b38c432dd930811e1f377622
 Patch0:		%{name}-sh.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
@@ -35,9 +35,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 MATE Desktop themes:
 
 - BlackMATE: cinnamon, gtk2, gtk3, marco, unity
-- BlackMenta: marco
 - BlueMenta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
+- Blue-Submarine: cinnamon, gtk2, gtk3, marco
 - GreenLaguna: gtk2, gtk3, marco, unity
+- Green-Submarine: cinnamon, gtk2, gtk3, marco
 - Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
 - Shiny: marco
 - TraditionalGreen: gtk2, gtk3, marco
@@ -48,9 +49,10 @@ MATE Desktop themes:
 Motywy dla środowiska MATE Desktop:
 
 - BlackMATE: cinnamon, gtk2, gtk3, marco, unity
-- BlackMenta: marco
 - BlueMenta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
+- Blue-Submarine: cinnamon, gtk2, gtk3, marco
 - GreenLaguna: gtk2, gtk3, marco, unity
+- Green-Submarine: cinnamon, gtk2, gtk3, marco
 - Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
 - Shiny: marco
 - TraditionalGreen: gtk2, gtk3, marco
@@ -111,9 +113,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %{_datadir}/themes/BlackMATE
-%{_datadir}/themes/BlackMenta
 %{_datadir}/themes/BlueMenta
+%{_datadir}/themes/Blue-Submarine
 %{_datadir}/themes/GreenLaguna
+%{_datadir}/themes/Green-Submarine
 %{_datadir}/themes/Menta
 %{_datadir}/themes/Shiny
 %{_datadir}/themes/TraditionalGreen
