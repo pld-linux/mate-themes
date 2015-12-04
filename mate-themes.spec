@@ -6,12 +6,12 @@
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	1.12.0
-Release:	2
+Version:	1.12.1
+Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.12/%{name}-gtk%{gtk3_mver}-%{version}.tar.xz
-# Source0-md5:	67b38a28ce0aaecc86bbaab20c16c2cb
+# Source0-md5:	f29447a6a4cdf34017fdbb733c22fb10
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
