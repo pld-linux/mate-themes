@@ -10,7 +10,7 @@ Version:	3.20.4
 Release:	1
 License:	GPL v2+
 Group:		Themes
-Source0:	http://pub.mate-desktop.org/releases/themes/3.20/%{name}-%{version}.tar.xz
+Source0:	http://pub.mate-desktop.org/releases/themes/%{gtk3_mver}/%{name}-%{version}.tar.xz
 # Source0-md5:	563a3c71c100a60e0ffec18c331d2ada
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
