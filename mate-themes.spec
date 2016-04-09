@@ -2,16 +2,16 @@
 # Conditional build:
 %bcond_without	a11y	# all accessibility themes (only core a11y themes otherwise)
 
-%define	gtk3_mver	3.18
+%define	gtk3_mver	3.20
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	1.12.2
+Version:	3.20.4
 Release:	1
 License:	GPL v2+
 Group:		Themes
-Source0:	http://pub.mate-desktop.org/releases/1.12/%{name}-gtk%{gtk3_mver}-%{version}.tar.xz
-# Source0-md5:	457749603a9affc1ae6dada0a095f193
+Source0:	http://pub.mate-desktop.org/releases/themes/3.20/%{name}-%{version}.tar.xz
+# Source0-md5:	563a3c71c100a60e0ffec18c331d2ada
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -79,7 +79,7 @@ niepełnosprawnych:
 - ContrastHighInverse: gtk2, gtk3, marco
 
 %prep
-%setup -q -n %{name}-gtk%{gtk3_mver}-%{version}
+%setup -q
 
 %build
 %{__aclocal}
@@ -102,24 +102,20 @@ for dir in $RPM_BUILD_ROOT%{_iconsdir}/*/; do
 	gtk-update-icon-cache -ft $dir
 done
 
-%find_lang %{name}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %{_datadir}/themes/BlackMATE
 %{_datadir}/themes/BlueMenta
 %{_datadir}/themes/Blue-Submarine
-%{_datadir}/themes/GreenLaguna
 %{_datadir}/themes/Green-Submarine
 %{_datadir}/themes/Menta
 %{_datadir}/themes/Shiny
 %{_datadir}/themes/TraditionalGreen
 %{_datadir}/themes/TraditionalOk
-%{_datadir}/themes/TraditionalOkTest
 %{_iconsdir}/mate/cursors
 
 %files accessibility
