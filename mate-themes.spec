@@ -6,12 +6,12 @@
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	3.20.4
+Version:	3.20.5
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/themes/%{gtk3_mver}/%{name}-%{version}.tar.xz
-# Source0-md5:	563a3c71c100a60e0ffec18c331d2ada
+# Source0-md5:	9c23641fd683371180d7a9acecb7261f
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -36,13 +36,11 @@ MATE Desktop themes:
 - BlackMATE: cinnamon, gtk2, gtk3, marco, unity
 - BlueMenta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
 - Blue-Submarine: cinnamon, gtk2, gtk3, marco
-- GreenLaguna: gtk2, gtk3, marco, unity
 - Green-Submarine: cinnamon, gtk2, gtk3, marco
 - Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
 - Shiny: marco
 - TraditionalGreen: gtk2, gtk3, marco
 - TraditionalOk: gtk2, gtk3, marco, openbox, xfwm4
-- TraditionalOkTest: gtk2, gtk3, marco
 
 %description -l pl.UTF-8
 Motywy dla środowiska MATE Desktop:
@@ -50,13 +48,11 @@ Motywy dla środowiska MATE Desktop:
 - BlackMATE: cinnamon, gtk2, gtk3, marco, unity
 - BlueMenta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
 - Blue-Submarine: cinnamon, gtk2, gtk3, marco
-- GreenLaguna: gtk2, gtk3, marco, unity
 - Green-Submarine: cinnamon, gtk2, gtk3, marco
 - Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
 - Shiny: marco
 - TraditionalGreen: gtk2, gtk3, marco
 - TraditionalOk: gtk2, gtk3, marco, openbox, xfwm4
-- TraditionalOkTest: gtk2, gtk3, marco
 
 %package accessibility
 Summary:	Accessibility themes for MATE environment
@@ -68,14 +64,12 @@ Requires:	mate-icon-theme >= 1.5
 %description accessibility
 Accessibility themes for MATE environment:
 
-- ContrastHigh: gtk2, gtk3, marco
 - ContrastHighInverse: gtk2, gtk3, marco
 
 %description accessibility -l pl.UTF-8
 Motywy dla środowiska MATE o zwiększonej dostępności dla
 niepełnosprawnych:
 
-- ContrastHigh: gtk2, gtk3, marco
 - ContrastHighInverse: gtk2, gtk3, marco
 
 %prep
@@ -120,6 +114,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files accessibility
 %defattr(644,root,root,755)
-%{_datadir}/themes/ContrastHigh
 %{_datadir}/themes/ContrastHighInverse
 %{_iconsdir}/ContrastHigh
