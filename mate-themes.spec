@@ -1,7 +1,4 @@
 #
-# Conditional build:
-%bcond_without	a11y	# all accessibility themes (only core a11y themes otherwise)
-
 %define	gtk3_mver	3.20
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
@@ -80,8 +77,6 @@ niepełnosprawnych:
 %{__autoconf}
 %{__automake}
 %configure \
-	%{__enable_disable a11y all-themes} \
-	--enable-icon-mapping \
 	--disable-silent-rules
 
 %{__make}
