@@ -3,12 +3,12 @@
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	3.20.5
+Version:	3.20.7
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/themes/%{gtk3_mver}/%{name}-%{version}.tar.xz
-# Source0-md5:	9c23641fd683371180d7a9acecb7261f
+# Source0-md5:	87a2254b0d9fe6deb93d58cba997ee12
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -33,6 +33,7 @@ MATE Desktop themes:
 - BlackMATE: cinnamon, gtk2, gtk3, marco, unity
 - BlueMenta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
 - Blue-Submarine: cinnamon, gtk2, gtk3, marco
+- GreenLaguna: gtk2, gtk3, marco, unity
 - Green-Submarine: cinnamon, gtk2, gtk3, marco
 - Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
 - Shiny: marco
@@ -45,6 +46,7 @@ Motywy dla środowiska MATE Desktop:
 - BlackMATE: cinnamon, gtk2, gtk3, marco, unity
 - BlueMenta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
 - Blue-Submarine: cinnamon, gtk2, gtk3, marco
+- GreenLaguna: gtk2, gtk3, marco, unity
 - Green-Submarine: cinnamon, gtk2, gtk3, marco
 - Menta: cinnamon, gtk2, gtk3, marco, unity, xfwm4
 - Shiny: marco
@@ -100,6 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/themes/BlackMATE
 %{_datadir}/themes/BlueMenta
 %{_datadir}/themes/Blue-Submarine
+%{_datadir}/themes/GreenLaguna
 %{_datadir}/themes/Green-Submarine
 %{_datadir}/themes/Menta
 %{_datadir}/themes/Shiny
