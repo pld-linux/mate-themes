@@ -1,4 +1,3 @@
-#
 %define	gtk3_mver	3.20
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
@@ -113,4 +112,6 @@ rm -rf $RPM_BUILD_ROOT
 %files accessibility
 %defattr(644,root,root,755)
 %{_datadir}/themes/ContrastHighInverse
+# note: top dirs (HighContrast/metacity-1) shared with metacity-themes-HighContrast 3.x
+%{_datadir}/themes/HighContrast
 %{_iconsdir}/ContrastHigh
