@@ -1,13 +1,13 @@
-%define	gtk3_mver	3.20
+%define	gtk3_mver	3.22
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	3.20.11
+Version:	3.22.2
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/themes/%{gtk3_mver}/%{name}-%{version}.tar.xz
-# Source0-md5:	9f55729302b3a2249b1591663f9a5177
+# Source0-md5:	e8e86d8515f46e861cc505a01c2be39a
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
