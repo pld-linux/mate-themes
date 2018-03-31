@@ -2,12 +2,12 @@
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	3.22.15
+Version:	3.22.16
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/themes/%{gtk3_mver}/%{name}-%{version}.tar.xz
-# Source0-md5:	3de26e4460a2678da8d4176a31d94d9e
+# Source0-md5:	95a6f8dff51d76ab6b560099e31653bf
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -108,6 +108,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/themes/TraditionalGreen
 %{_datadir}/themes/TraditionalOk
 %{_iconsdir}/mate/cursors
+%dir %{_iconsdir}/mate-black
+%{_iconsdir}/mate-black/index.theme
+%{_iconsdir}/mate-black/cursors
 
 %files accessibility
 %defattr(644,root,root,755)
