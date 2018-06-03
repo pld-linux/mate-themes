@@ -2,12 +2,12 @@
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	3.22.16
+Version:	3.22.17
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/themes/%{gtk3_mver}/%{name}-%{version}.tar.xz
-# Source0-md5:	95a6f8dff51d76ab6b560099e31653bf
+# Source0-md5:	1e8d4a51636e11c2d30d7e2da725bda0
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -62,13 +62,13 @@ Requires:	mate-icon-theme >= 1.5
 %description accessibility
 Accessibility themes for MATE environment:
 
-- ContrastHighInverse: gtk2, gtk3, marco
+- HighContrastInverse: gtk2, gtk3, marco
 
 %description accessibility -l pl.UTF-8
 Motywy dla środowiska MATE o zwiększonej dostępności dla
 niepełnosprawnych:
 
-- ContrastHighInverse: gtk2, gtk3, marco
+- HighContrastInverse: gtk2, gtk3, marco
 
 %prep
 %setup -q
@@ -115,7 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %files accessibility
 %defattr(644,root,root,755)
 %{_datadir}/themes/ContrastHigh
-%{_datadir}/themes/ContrastHighInverse
+%{_datadir}/themes/HighContrastInverse
 # note: top dirs (HighContrast/metacity-1) shared with metacity-themes-HighContrast 3.x
 %{_datadir}/themes/HighContrast
 %{_iconsdir}/ContrastHigh
