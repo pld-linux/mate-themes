@@ -2,12 +2,12 @@
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	3.22.19
-Release:	2
+Version:	3.22.20
+Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/themes/%{gtk3_mver}/%{name}-%{version}.tar.xz
-# Source0-md5:	71fd097a92b56759c9178988eb16d624
+# Source0-md5:	db1534703bbefb19cb783c8b29f6d447
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -99,11 +99,17 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %{_datadir}/themes/BlackMATE
+%{_datadir}/themes/BlackMATE-border
 %{_datadir}/themes/BlueMenta
+%{_datadir}/themes/BlueMenta-border
 %{_datadir}/themes/Blue-Submarine
+%{_datadir}/themes/Blue-Submarine-border
 %{_datadir}/themes/GreenLaguna
+%{_datadir}/themes/GreenLaguna-border
 %{_datadir}/themes/Green-Submarine
+%{_datadir}/themes/Green-Submarine-border
 %{_datadir}/themes/Menta
+%{_datadir}/themes/Menta-border
 %{_datadir}/themes/Shiny
 %{_datadir}/themes/TraditionalGreen
 %{_datadir}/themes/TraditionalOk
