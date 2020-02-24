@@ -2,20 +2,20 @@
 Summary:	MATE Desktop themes
 Summary(pl.UTF-8):	Motywy dla środowiska MATE Desktop
 Name:		mate-themes
-Version:	3.22.20
+Version:	3.22.21
 Release:	1
 License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/themes/%{gtk3_mver}/%{name}-%{version}.tar.xz
-# Source0-md5:	db1534703bbefb19cb783c8b29f6d447
+# Source0-md5:	b22565d598054401f86ac0c596d85820
+Patch0:		noarch-build.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gdk-pixbuf2-devel >= 2.0.0
-BuildRequires:	gettext-tools
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	icon-naming-utils >= 0.8.7
-BuildRequires:	intltool >= 0.35.0
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -72,6 +72,7 @@ niepełnosprawnych:
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__aclocal}
