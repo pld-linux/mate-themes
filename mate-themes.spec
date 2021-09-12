@@ -9,7 +9,7 @@ Group:		Themes
 Source0:	https://pub.mate-desktop.org/releases/themes/%{gtk3_mver}/%{name}-%{version}.tar.xz
 # Source0-md5:	911bb692dd3d2d6e83acf2c7a346fd77
 Patch0:		noarch-build.patch
-URL:		http://mate-desktop.org/
+URL:		https://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gdk-pixbuf2-devel >= 2.0.0
@@ -85,6 +85,7 @@ niepełnosprawnych:
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
